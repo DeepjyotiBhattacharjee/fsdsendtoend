@@ -10,9 +10,7 @@ def get_requirements(file_path:str)->List[str]:
         requirements=[req.replace("\n","") for req in requirements]
 
         if HYPEN_E_DOT in requirements:
-            print("here")
             requirements.remove(HYPEN_E_DOT)
-    print(requirements)
 
     return requirements
 
