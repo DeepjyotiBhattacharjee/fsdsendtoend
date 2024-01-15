@@ -15,8 +15,3 @@ class customexception(Exception):
             str(self.error_message)
         )
     
-if __name__ == "__main__":
-    try:
-        5/0
-    except Exception as e:
-        raise customexception(e,sys)
