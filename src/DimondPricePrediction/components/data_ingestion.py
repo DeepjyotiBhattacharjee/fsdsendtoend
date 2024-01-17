@@ -22,6 +22,7 @@ class DataIngestion:
         logging.info("Data ingestion started.")
 
         try:
+            print("current working dir === ",os.getcwd())
             data = pd.read_csv(Path(os.path.join("notebooks/data","gemstone.csv")))
             logging.info("Read the dataset as a dataframe")
 
@@ -29,7 +30,7 @@ class DataIngestion:
             data.to_csv(self.ingestion_config.raw_data_path,index=False)
             logging.info("Saved raw data path in artifacts folder.")
 
-            logging.info("Performing train test split.")
+            logging.info("Performing train test split.") 
             train_data,test_data =  train_test_split(data ,test_size=0.25)
             train_data.to_csv(self.ingestion_config.train_data_path,index=False)
             test_data.to_csv(self.ingestion_config.test_data_path,index=False) 
